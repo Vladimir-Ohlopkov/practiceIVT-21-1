@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>History Test</title>
+    <meta charset = "UTF-8">
+  </head>
+
+  <body style = "background-color: #D12C2C"> 
+    <div style = "color: white; font-family: Courier New">
+      <IMG SRC = "https://download.blender.org/branding/blender_logo_socket.png" height = "100">
+      <h1>TEST - BLENDER TRIVIA</h1>
+      <div>
+        <label><b> 1: What's the hotkey for Extend in Edit Mode? </b></label> <br>
+        <input type = "radio" id = "q1p1" name = "q1" value = "Yes"> E <br>
+        <input type = "radio" id = "q1p2" name = "q1" value = "No"> R <br>
+        <input type = "radio" id = "q1p3" name = "q1" value = "No"> B <br>
+        <input type = "radio" id = "q1p4" name = "q1" value = "No"> Ctrl+E <br>
+      </div><br>
+
+      <div>
+        <label><b> 2: Which rendering engine supports raytracing? </b></label> <br>
+        <input type = "radio" id = "q2p1" name = "q2" value = "No"> Workbench <br>
+        <input type = "radio" id = "q2p2" name = "q2" value = "Yes"> Cycles <br>
+        <input type = "radio" id = "q2p3" name = "q2" value = "No"> Eevee <br>
+      </div><br>
+
+      <div>
+        <label><b> 3: How do you reset Roll of the selected bones in Pose Mode? </b></label> <br>
+        <input type = "radio" id = "q3p1" name = "q3" value = "Yes"> Alt+R <br>
+        <input type = "radio" id = "q3p2" name = "q3" value = "No"> P <br>
+        <input type = "radio" id = "q3p3" name = "q3" value = "No"> F2 <br>
+      </div><br>
+
+      <div>
+        <label><b> 4: Hotkey for switching between Modes? </b></label> <br>
+        <input type = "radio" id = "q4p1" name = "q4" value = "No"> Ctrl+Alt <br>
+        <input type = "radio" id = "q4p2" name = "q4" value = "No"> L <br>
+        <input type = "radio" id = "q4p3" name = "q4" value = "Yes"> Tab <br>
+        <input type = "radio" id = "q4p4" name = "q4" value = "No"> 3 <br>
+      </div><br>
+      
+      <div>
+        <label><b> 5: Does Blender have a compositing function? </b></label> <br>
+        <input type = "radio" id = "q5p1" name = "q5" value = "Yes"> Yes <br>
+        <input type = "radio" id = "q5p2" name = "q5" value = "No"> No <br>
+      </div><br>
+      
+      <div>
+        <input type = "reset" id = "reset">
+      </div><br>
+
+      <div>
+        <input type = "submit" id = "submit">
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('submit').onclick = function(){
+        var test_length = 5;
+        var correct = 0;
+
+        for(var i = 1; i <= test_length; i++)
+        {
+          var value = document.getElementsByName("q"+i);
+
+          for (var radio of value)
+          {
+            if (radio.checked && radio.value=="Yes") {    
+              correct++;
+            }
+          }
+        }
+
+        alert("Grade: " + correct);
+      }
+    </script>
+  </body>
+</html>
